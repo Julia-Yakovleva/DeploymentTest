@@ -9,6 +9,7 @@ on:
         type: choice
         options:
           - dev
+          - qa
           - live
 jobs:
   set-env:
@@ -16,8 +17,9 @@ jobs:
     environment: ${{ github.event.inputs.ENV }}
     steps:
       - run: echo "Set env"
-  deployment:
+  build:
+    needs: set-env
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Deploy"
+      - run: echo "Build"
   
