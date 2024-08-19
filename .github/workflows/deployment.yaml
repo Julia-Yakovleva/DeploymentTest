@@ -22,5 +22,5 @@ jobs:
     needs: set-env
     runs-on: ubuntu-latest
     steps:
-      - run: echo "${env.CLUSTER}"
+      - run: echo "${{ vars.CLUSTER }}"
   
