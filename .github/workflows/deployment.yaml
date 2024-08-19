@@ -18,6 +18,7 @@ jobs:
     steps:
       - run: echo "Set env"
   build:
+    environment: ${{ github.event.inputs.ENV }}
     needs: set-env
     runs-on: ubuntu-latest
     steps:
